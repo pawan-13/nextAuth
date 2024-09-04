@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import './index.css';
 import Link from 'next/link';
+import { cookies } from 'next/headers';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useRouter } from 'next/navigation';
@@ -88,7 +89,8 @@ const Login = () => {
             }
           });
           notify();
-          router.push('/home');
+          localStorage.setItem('token', response.data.token);
+          router.replace('/home');
          }
       } catch (error) {
         console.error('Error during signup', error);
