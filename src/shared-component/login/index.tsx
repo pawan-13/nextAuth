@@ -131,7 +131,7 @@ const Login = () => {
           />
           <span className='error-message'>{inputVal.error.password}</span>
         </div>
-        <p style={{ marginTop: "-0.5rem", textAlign: "end", color: "black", fontWeight: "500", marginBottom: "0.9rem" }}><Link href="/Signup" style={{ color: "cornflowerblue", fontWeight: "500" }}>Forgot Password</Link></p>
+        <p style={{ marginTop: "-0.5rem", textAlign: "end", color: "black", fontWeight: "500", marginBottom: "0.9rem" }}><Link href="/forgotpassword" style={{ color: "cornflowerblue", fontWeight: "500" }}>Forgot Password</Link></p>
         <button type="submit" className="submit-button">Login</button>
         <p style={{ marginTop: "1rem", textAlign: "center", color: "black", fontWeight: "500" }}>Don't have an account? <Link href="/Signup" style={{ color: "cornflowerblue", fontWeight: "500" }}>Signup</Link></p>
       </form>
