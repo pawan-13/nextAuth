@@ -14,12 +14,12 @@ export const POST = async (NextRequest) => {
             return NextResponse('All field are required', { status: 400 });
         }
 
-        const userCheck = await userdb.findOne({ email });
+        const userCheck = await userdb.findOne({email});
         if (!userCheck) {
             return NextResponse('email does not match', { status: 400 });
         }
 
-        const isMatch = await bcryptjs.compare('password', userCheck.password);
+        const isMatch = await bcryptjs.compare('password',userCheck.password);
         if (!isMatch) {
             return NextResponse('password does not match', { status: 400 });
         }
@@ -38,7 +38,7 @@ export const POST = async (NextRequest) => {
         return response;
 
     } catch (error) {
-        console.log('error',error.message);
+        console.log('error', error.message);
         return NextResponse('something is wrong', { status: 400 });
     }
 }
